@@ -1,0 +1,28 @@
+# Normalize line endings for cross-platform consistency
+* text=auto
+
+# Python files should always use LF line endings
+*.py text eol=lf
+
+# HTML, CSS, JS files (same LF style)
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+
+# Treat binary files as-is (no line ending changes)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.db binary
+
+# Ensure that templates and static assets are recognized as text
+*.txt text
+*.md text
+*.yml text
+*.yaml text
+
+# Explicitly mark UTF-8 encoding for safety
+*.py linguist-language=Python

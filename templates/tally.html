@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head><title>Tally</title></head>
+<body>
+<h2>Vote Tally</h2>
+<table border="1" cellpadding="4">
+  <tr><th>Choice</th><th>Count</th></tr>
+  {% for choice, cnt in rows %}
+  <tr><td>{{ choice }}</td><td>{{ cnt }}</td></tr>
+  {% endfor %}
+</table>
+<p>Total votes: {{ total }}</p>
+<p><a href="{{ url_for('admin_dashboard') }}">Back</a></p>
+</body>
+</html>

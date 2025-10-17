@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: festac-voting-app
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    autoDeploy: true
+    # If you want SQLite to persist, uncomment the disk section below:
+    # disk:
+    #   name: data
+    #   mountPath: /data
+    #   sizeGB: 1

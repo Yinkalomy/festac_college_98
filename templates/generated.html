@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head><title>Generated Tokens</title></head>
+<body>
+<h2>Generated Tokens</h2>
+<ul>
+{% for email, link in created %}
+  <li>{{ email or '(anonymous)' }} — <a href="{{ link }}">{{ link }}</a></li>
+{% endfor %}
+</ul>
+<p><a href="{{ url_for('admin_dashboard') }}">Back to dashboard</a></p>
+</body>
+</html>

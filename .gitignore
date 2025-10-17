@@ -1,0 +1,26 @@
+# Python cache and bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment and secrets
+.env
+instance/
+server_salt.bin
+*.db
+votes.db
+
+# Logs and temporary files
+*.log
+*.sqlite3
+*.bak
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+testing/
+.env/

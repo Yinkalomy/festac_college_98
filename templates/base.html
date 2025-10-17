@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Festac College Voting{% endblock %}</title>
+
+  <!-- Favicon and Font -->
+  <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <header>
+    <img src="{{ url_for('static', filename='images/festac_badge.png') }}" 
+       alt="Festac College Badge"
+       style="height:80px; border-radius:8px; margin-bottom:0.5rem;">
+    <h1>Festac College 1998 Set</h1>
+    <nav>
+      <a href="/">Home</a> |
+      <a href="/admin/login">Admin Login</a> |
+      <a href="/admin/register">Register</a> |
+      <a href="/admin/tally">Tally</a>
+      <a href="/"><img src="{{ url_for('static', filename='images/festac_badge.png') }}"
+         alt="Festac College Badge" style="height:80px; border-radius:8px; margin-bottom:0.5rem;"></a>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- FLASH MESSAGES -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div id="flash-container">
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Festac College 1998 Set — Secret Ballot Voting System</p>
+  </footer>
+
+  <!-- AUTO-DISMISS FLASH MESSAGES -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const flashes = document.querySelectorAll(".flash");
+      flashes.forEach(flash => {
+        setTimeout(() => {
+          flash.style.transition = "opacity 0.8s ease";
+          flash.style.opacity = "0";
+          setTimeout(() => flash.remove(), 800);
+        }, 3000); // 3 seconds before fade out
+      });
+    });
+  </script>
+
+</body>
+</html>

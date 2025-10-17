@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Home — {{ association_name }}{% endblock %}
+
+{% block content %}
+  <h2>{{ association_name }} — Secret Ballot Voting</h2>
+  <p>
+    Welcome to the secure voting portal for {{ association_name }}.
+    This platform ensures anonymous and verifiable elections for all alumni members.
+  </p>
+
+  <p>
+    If you received a voting link, please open it to cast your vote.<br>
+    If you didn’t receive one, kindly contact your alumni admins for assistance.
+  </p>
+
+  <p style="margin-top: 1rem;">
+    <a href="/admin/login">→ Admin Login</a>
+  </p>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head><title>Admin Dashboard</title></head>
+<body>
+<h2>Admin Dashboard</h2>
+<p>Logged in as: {{ email }}</p>
+<ul>
+  <li><a href="{{ url_for('admin_generate') }}">Generate tokens</a></li>
+  <li><a href="{{ url_for('admin_tally') }}">View tally</a></li>
+  <li><a href="{{ url_for('admin_export_audit') }}">Export audit CSV</a></li>
+  <li><a href="{{ url_for('admin_logout') }}">Logout</a></li>
+</ul>
+</body>
+</html>

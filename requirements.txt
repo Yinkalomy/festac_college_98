@@ -1,0 +1,18 @@
+# Core Flask app
+Flask==3.0.3
+Flask-SQLAlchemy==3.1.1
+Flask-Bcrypt==1.0.1
+
+# Environment variables
+python-dotenv==1.0.1
+
+# Production server
+gunicorn==21.2.0
+
+# Utilities
+requests==2.32.3
+itsdangerous==2.2.0
+pytz==2024.1
+
+# Optional email support
+Flask-Mail==0.9.1
