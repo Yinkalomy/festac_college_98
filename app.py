@@ -9,9 +9,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import csv, io, datetime, base64, secrets
 from dotenv import load_dotenv
 
+# Ensure instance folder exists (important for Render deployment)
+os.makedirs(os.path.join(os.getcwd(), 'instance'), exist_ok=True)
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///instance/votes.db')
 app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', secrets.token_hex(32))
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ADMIN_REGISTER_CODE = os.getenv('ADMIN_REGISTER_CODE', 'admincode123')
 
 load_dotenv()  # take environment variables from .env.
